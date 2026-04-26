@@ -1,4 +1,145 @@
+/* style.css */
+
+/* 1. Variables & Root */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #24292e;
+    --heading-color: #1a1d21;
+    --accent-color: #0066cc; /* Professional Blue */
+    --border-color: #e1e4e8;
+    --secondary-text: #586069;
+    --max-width: 850px;
+}
+
+/* 2. Basic Reset & Layout */
+* {
+    box-sizing: border-box;
+}
 
 body {
-     font-family: 'Inter', 'Segoe UI', 'Aptos', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container { /* Wrap your HTML in a <div class="container"> for better results */
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* If you can't wrap the HTML, apply max-width to body directly */
+body {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* 3. Headings */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
+    color: var(--heading-color);
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-top: 40px;
+    color: var(--heading-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+/* 4. Links & Emphasis */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+strong {
+    color: #000;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0;
+}
+
+/* 5. Lists & Experience Section */
+ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* Specific styling for the "Stack" lines */
+p > strong:first-child {
+    display: inline-block;
+    background: #f6f8fa;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, monospace;
+    font-size: 0.9em;
+}
+
+/* 6. Header/Contact Info Styling */
+h1 + p {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    margin-top: 0;
+}
+
+/* 7. Responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* 8. Print Optimization (For when recruiters Save as PDF) */
+@media print {
+    body {
+        padding: 0;
+        font-size: 11pt;
+    }
+    
+    h2 {
+        margin-top: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
